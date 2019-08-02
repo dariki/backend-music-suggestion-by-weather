@@ -1,0 +1,18 @@
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  hystrix:
+    enabled: true
+
+logging:
+  level:
+    br.com.ariki.music.suggestion.by.weather: DEBUG
+
+openweathermap:
+  feign:
+    name: open-weather-map-api
+    url: api.openweathermap.org/data/2.5/
