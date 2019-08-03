@@ -10,7 +10,14 @@ logging:
   level:
     br.com.ariki.music.suggestion.by.weather: DEBUG
 
+
+#Custom
 openweathermap:
   feign:
     name: open-weather-map-api
-    url: api.openweathermap.org/data/2.5/
+    url: https://api.openweathermap.org/data/2.5
+spotify:
+  feign:
+    name: spotify-api
+    api-url: https://api.spotify.com/v1
+    account-url: https://accounts.spotify.com

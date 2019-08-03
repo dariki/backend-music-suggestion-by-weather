@@ -12,9 +12,11 @@ import br.com.ariki.music.suggestion.by.weather.entrypoint.controller.mapper.Tem
 import br.com.ariki.music.suggestion.by.weather.entrypoint.controller.response.TemperatureResponse;
 import br.com.ariki.music.suggestion.by.weather.usecase.entity.Temperature;
 import br.com.ariki.music.suggestion.by.weather.usecase.service.SearchWeatherByCityService;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/suggestion")
+@Slf4j
 public class SuggestionController {
 	
 	private SearchWeatherByCityService service;
@@ -25,7 +27,10 @@ public class SuggestionController {
 
 	@GetMapping
 	public ResponseEntity<TemperatureResponse> getSuggestion(@RequestParam(name = "q") String cityName ) {
+		log.debug("Init getSuggestion");
+		
 		Optional<Temperature> optional = Optional.ofNullable(service.execute(cityName));
+		
 		return optional.map(temperature -> ResponseEntity.ok(TemperatureToTemperatureResponse.to(temperature)))
 				.orElse(ResponseEntity.noContent().build());
 	}
