@@ -5,9 +5,10 @@ import org.springframework.stereotype.Component;
 import br.com.ariki.music.suggestion.by.weather.dataprovider.feign.openweathermap.FeignOpenWeatherMapAPI;
 import br.com.ariki.music.suggestion.by.weather.dataprovider.feign.openweathermap.mapper.OpenWeatherMapResponseToTemperature;
 import br.com.ariki.music.suggestion.by.weather.usecase.entity.Temperature;
+import br.com.ariki.music.suggestion.by.weather.usecase.gateway.SearchWeatherByCityGateway;
 
 @Component
-public class SearchWeatherByCityDataProvider {
+public class SearchWeatherByCityDataProvider implements SearchWeatherByCityGateway {
 	
 	private FeignOpenWeatherMapAPI client;
 
@@ -16,9 +17,7 @@ public class SearchWeatherByCityDataProvider {
 	}
 	
 	public Temperature getWeatherByCity(String cityName) {
-		
-		return OpenWeatherMapResponseToTemperature.to(client.getStores(cityName));
-		
+		return OpenWeatherMapResponseToTemperature.to(client.getWeather(cityName));
 	}
 
 }

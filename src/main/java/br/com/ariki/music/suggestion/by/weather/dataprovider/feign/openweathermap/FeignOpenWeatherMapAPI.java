@@ -5,12 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import br.com.ariki.music.suggestion.by.weather.dataprovider.feign.hystrix.FeignFallback;
 import br.com.ariki.music.suggestion.by.weather.dataprovider.feign.openweathermap.response.OpenWeatherMapResponse;
 
-@FeignClient(name = "${openweathermap.feign.name}", url = "${openweathermap.feign.url}", fallback = FeignFallback.class)
+@FeignClient(name = "${openweathermap.feign.name}", url = "${openweathermap.feign.url}")
 public interface FeignOpenWeatherMapAPI {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/weather")
-	OpenWeatherMapResponse getStores(@RequestParam(value = "q") String cityName);
+	OpenWeatherMapResponse getWeather(@RequestParam(value = "q") String cityName);
 }
