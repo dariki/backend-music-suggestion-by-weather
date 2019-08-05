@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import br.com.ariki.music.suggestion.by.weather.dataprovider.feign.spotify.response.SpotifyTokenResponse;
 import feign.Headers;
 
-@FeignClient(name = "${spotify.feign.name}", url = "${spotify.feign.account-url}")
+
+@FeignClient(name = "${spotify.feign.account.name}", url = "${spotify.feign.account.url}")
 public interface FeignSpotifyAccountAPI {
 
 	@RequestMapping(method = RequestMethod.POST, value = "/api/token", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)

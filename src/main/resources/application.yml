@@ -18,6 +18,14 @@ openweathermap:
     url: https://api.openweathermap.org/data/2.5
 spotify:
   feign:
-    name: spotify-api
-    api-url: https://api.spotify.com/v1
-    account-url: https://accounts.spotify.com
+    account:
+      name: spotify-account-api
+      url: https://accounts.spotify.com
+    api:
+      name: spotify-api
+      url: https://api.spotify.com/v1
+    playlist:
+      party-id: 37i9dQZF1DXaXB8fQg7xif
+      pop-id: 37i9dQZF1DWUa8ZRTfalHk
+      rock-id: 37i9dQZF1DX8FwnYE6PRvL
+      classical-id: 37i9dQZF1DWWEJlAGA9gs0

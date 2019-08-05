@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-import br.com.ariki.music.suggestion.by.weather.dataprovider.SpotifyAccountDataProvider;
+import br.com.ariki.music.suggestion.by.weather.dataprovider.SpotifyApiDataProvider;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -19,10 +19,11 @@ public class Application implements CommandLineRunner {
 	}
 	
 	@Autowired
-	private SpotifyAccountDataProvider dataprovider;
+	private SpotifyApiDataProvider dataprovider;
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(dataprovider.getToken());
+		
+		System.out.println(dataprovider.getPlaylist());
 	}
 }
