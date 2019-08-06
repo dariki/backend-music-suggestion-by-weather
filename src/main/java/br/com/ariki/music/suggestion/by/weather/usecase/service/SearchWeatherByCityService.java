@@ -25,11 +25,9 @@ public class SearchWeatherByCityService {
 		return gateway.getWeatherByCity(cityName);
 	}
 	
-	public Temperature executeRecover(String cityName) {
+	public Temperature executeRecover(String cityName, Throwable ex) {
 		log.debug("Init executeRecover");
-		log.error("Hystrix called executeRecover for param {}", cityName);
-		return Temperature.builder()
-				.temperature(-99999D)
-				.build();
+		log.error("Hystrix called executeRecover for param {}", ex.getMessage());
+		return null;
 	}
 }

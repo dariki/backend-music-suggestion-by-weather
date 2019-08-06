@@ -20,7 +20,9 @@ public class WeatherByCityDataProvider implements WeatherByCityGateway {
 	
 	public Temperature getWeatherByCity(String cityName) {
 		log.debug("Init getWeatherByCity");
-		return OpenWeatherMapResponseToTemperature.to(client.getWeather(cityName));
+		String appid = "3d4aabd532def3666be6acb0e3086931";
+		String units = "metric";
+		return OpenWeatherMapResponseToTemperature.to(client.getWeather(cityName, appid, units));
 	}
 
 }

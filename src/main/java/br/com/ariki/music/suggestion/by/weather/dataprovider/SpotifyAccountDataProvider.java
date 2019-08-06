@@ -22,7 +22,7 @@ public class SpotifyAccountDataProvider implements SpotifyAccountGateway {
 	
 	public SpotifyToken getToken() {
 		log.debug("Init getToken");
-		String token = "Basic 152af389eafc4796b74852d91bbc64a4:d343a11996d04a229fecf598e996b3a7";
+		String token = "Basic MTUyYWYzODllYWZjNDc5NmI3NDg1MmQ5MWJiYzY0YTQ6ZDM0M2ExMTk5NmQwNGEyMjlmZWNmNTk4ZTk5NmIzYTc=";
 		MultiValueMap<String, String> bodyRequestMap = new LinkedMultiValueMap<>();
 		bodyRequestMap.add("grant_type", "client_credentials");
 		return SpotifyTokenResponseToSpotifyToken.to(client.getToken(token, bodyRequestMap));

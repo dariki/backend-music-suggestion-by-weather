@@ -11,5 +11,8 @@ import br.com.ariki.music.suggestion.by.weather.dataprovider.feign.openweatherma
 public interface FeignOpenWeatherMapAPI {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/weather")
-	OpenWeatherMapResponse getWeather(@RequestParam(value = "q") String cityName);
+	OpenWeatherMapResponse getWeather(
+			@RequestParam(value = "q") String cityName, 
+			@RequestParam(value = "APPID") String appid,
+			@RequestParam(value = "units") String units);
 }

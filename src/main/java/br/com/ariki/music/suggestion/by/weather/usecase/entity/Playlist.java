@@ -2,6 +2,8 @@ package br.com.ariki.music.suggestion.by.weather.usecase.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Builder;
 import lombok.Value;
 
@@ -9,6 +11,8 @@ import lombok.Value;
 @Builder
 public class Playlist {
 	
+	@JsonProperty("name")
+	private String description;
 	private List<TrackInfo> trackInfo;
 
 }

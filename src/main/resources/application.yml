@@ -10,12 +10,19 @@ logging:
   level:
     br.com.ariki.music.suggestion.by.weather: DEBUG
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation.thread.timeoutInMilliseconds: 5000
 
 #Custom
 openweathermap:
   feign:
     name: open-weather-map-api
     url: https://api.openweathermap.org/data/2.5
+  error: Infelizmente não conseguimos realizar a consulta do clima no OpenWeather. Mesmo assim temos uma sugestao de nossos editores!
+  
 spotify:
   feign:
     account:
@@ -29,3 +36,4 @@ spotify:
       pop-id: 37i9dQZF1DWUa8ZRTfalHk
       rock-id: 37i9dQZF1DX8FwnYE6PRvL
       classical-id: 37i9dQZF1DWWEJlAGA9gs0
+  error: Infelizmente não conseguimos realizar a consulta da playlist no Spotify. Mesmo assim temos uma sugestao de nossos editores!

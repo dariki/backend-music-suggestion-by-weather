@@ -7,5 +7,6 @@ import lombok.Value;
 @Builder
 public class PlaylistResponse {
 
+	private String name;
 	private Tracks tracks;
 }

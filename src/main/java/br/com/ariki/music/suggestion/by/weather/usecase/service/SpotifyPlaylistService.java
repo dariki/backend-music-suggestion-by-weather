@@ -4,30 +4,33 @@ import org.springframework.stereotype.Service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-import br.com.ariki.music.suggestion.by.weather.usecase.entity.SpotifyToken;
-import br.com.ariki.music.suggestion.by.weather.usecase.gateway.SpotifyAccountGateway;
+import br.com.ariki.music.suggestion.by.weather.usecase.entity.MusicStyle;
+import br.com.ariki.music.suggestion.by.weather.usecase.entity.Playlist;
+import br.com.ariki.music.suggestion.by.weather.usecase.gateway.SpotifyAPIGateway;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
 public class SpotifyPlaylistService {
 	
-	private SpotifyAccountGateway gateway;
+	private static final String BEARER = "Bearer "; 
+	
+	private SpotifyAPIGateway gateway;
 
-	public SpotifyPlaylistService(SpotifyAccountGateway gateway) {
+	public SpotifyPlaylistService(SpotifyAPIGateway gateway) {
 		this.gateway = gateway;
 	}
 	
 	@HystrixCommand(fallbackMethod = "executeRecover")
-	public String execute() {
+	public Playlist execute(MusicStyle musicStyle, String token) {
 		log.debug("Init execute");
-		SpotifyToken token = gateway.getToken();
-		return token.getAccessToken();
+		Playlist playlist = gateway.getPlaylist(musicStyle, BEARER + token);
+		return playlist;
 	}
 	
-	public String executeRecover() {
+	public Playlist executeRecover(MusicStyle musicStyle, String token) {
 		log.debug("Init executeRecover");
-		log.error("Hystrix called executeRecover because token error");
+		log.error("Hystrix called executeRecover because playlist service is not working");
 		return null;
 	}
 
