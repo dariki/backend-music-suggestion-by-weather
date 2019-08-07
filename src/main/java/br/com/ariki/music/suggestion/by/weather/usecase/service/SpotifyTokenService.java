@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-import br.com.ariki.music.suggestion.by.weather.usecase.entity.SpotifyToken;
-import br.com.ariki.music.suggestion.by.weather.usecase.gateway.SpotifyAccountGateway;
+import br.com.ariki.music.suggestion.by.weather.domain.entity.SpotifyToken;
+import br.com.ariki.music.suggestion.by.weather.gateway.SpotifyAccountGateway;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

@@ -7,10 +7,10 @@ import java.util.stream.Stream;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-import br.com.ariki.music.suggestion.by.weather.usecase.entity.MusicStyle;
-import br.com.ariki.music.suggestion.by.weather.usecase.entity.Playlist;
-import br.com.ariki.music.suggestion.by.weather.usecase.entity.Temperature;
-import br.com.ariki.music.suggestion.by.weather.usecase.entity.TrackInfo;
+import br.com.ariki.music.suggestion.by.weather.domain.entity.MusicStyle;
+import br.com.ariki.music.suggestion.by.weather.domain.entity.Playlist;
+import br.com.ariki.music.suggestion.by.weather.domain.entity.Temperature;
+import br.com.ariki.music.suggestion.by.weather.domain.entity.TrackInfo;
 
 @Component
 public class FindPlaylistService {

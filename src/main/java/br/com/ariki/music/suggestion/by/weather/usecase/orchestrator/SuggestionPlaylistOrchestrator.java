@@ -2,8 +2,8 @@ package br.com.ariki.music.suggestion.by.weather.usecase.orchestrator;
 
 import org.springframework.stereotype.Component;
 
-import br.com.ariki.music.suggestion.by.weather.usecase.entity.Playlist;
-import br.com.ariki.music.suggestion.by.weather.usecase.entity.Temperature;
+import br.com.ariki.music.suggestion.by.weather.domain.entity.Playlist;
+import br.com.ariki.music.suggestion.by.weather.domain.entity.Temperature;
 import br.com.ariki.music.suggestion.by.weather.usecase.service.FindPlaylistService;
 import br.com.ariki.music.suggestion.by.weather.usecase.service.SearchWeatherByCityService;
 import br.com.ariki.music.suggestion.by.weather.usecase.service.SpotifyTokenService;
