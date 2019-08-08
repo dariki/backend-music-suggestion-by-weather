@@ -1,6 +1,6 @@
 # backend-music-suggestion-by-weather
 
-Incluir JWT
-Incluir Swagger
-Incluir Splunk
+
+
+Para acessar a aplicação: http://localhost:8080/swagger-ui.html
 
