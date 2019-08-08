@@ -9,6 +9,7 @@ feign:
 logging:
   level:
     br.com.ariki.music.suggestion.by.weather: DEBUG
+    org.springframework.cache: TRACE
 
 hystrix:
   command:

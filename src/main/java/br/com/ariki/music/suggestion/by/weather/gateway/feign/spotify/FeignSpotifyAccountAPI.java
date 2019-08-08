@@ -1,5 +1,6 @@
 package br.com.ariki.music.suggestion.by.weather.gateway.feign.spotify;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.util.MultiValueMap;
@@ -17,6 +18,7 @@ public interface FeignSpotifyAccountAPI {
 
 	@RequestMapping(method = RequestMethod.POST, value = "/api/token", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	@Headers("Content-Type: application/x-www-form-urlencoded")
+	@Cacheable("token")
 	SpotifyTokenResponse getToken(
 			@RequestHeader(name = "Authorization") String token,
 			@RequestBody MultiValueMap<String, String> bodyRequestMap);

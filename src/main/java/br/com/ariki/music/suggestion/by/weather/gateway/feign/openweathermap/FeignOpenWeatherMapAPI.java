@@ -1,5 +1,6 @@
 package br.com.ariki.music.suggestion.by.weather.gateway.feign.openweathermap;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,12 +13,14 @@ import br.com.ariki.music.suggestion.by.weather.gateway.feign.openweathermap.res
 public interface FeignOpenWeatherMapAPI {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/weather")
+	@Cacheable("weatherCity")
 	OpenWeatherMapResponse getWeatherByCity(
 			@RequestParam(value = "q") String cityName, 
 			@RequestParam(value = "APPID") String appid,
 			@RequestParam(value = "units") String units);
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/weather")
+	@Cacheable("weatherLatLon")
 	OpenWeatherMapResponse getWeatherByLatLon(
 			@RequestParam(value = "lat") String lat, 
 			@RequestParam(value = "lon") String lon,

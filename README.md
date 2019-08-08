@@ -2,5 +2,5 @@
 
 
 
-Para acessar a aplicação: http://localhost:8080/swagger-ui.html
+Swagger: http://localhost:8080/swagger-ui.html
 
