@@ -9,5 +9,6 @@ public class TrackInfo {
 	
 	private String artistName;
 	private String musicName;
+	private String href;
 
 }

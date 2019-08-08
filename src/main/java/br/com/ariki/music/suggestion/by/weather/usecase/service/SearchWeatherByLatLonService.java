@@ -10,21 +10,21 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-public class SearchWeatherByCityService {
+public class SearchWeatherByLatLonService {
 
 	
 	private OpenWeatherMapGateway gateway;
 
-	public SearchWeatherByCityService(OpenWeatherMapGateway gateway) {
+	public SearchWeatherByLatLonService(OpenWeatherMapGateway gateway) {
 		this.gateway = gateway;
 	}
 	
 	@HystrixCommand(fallbackMethod = "executeRecover")
-	public Temperature execute(String cityName) {
-		return gateway.getWeatherByCity(cityName);
+	public Temperature execute(String lat, String lon) {
+		return gateway.getWeatherByLatLon(lat, lon);
 	}
 	
-	public Temperature executeRecover(String cityName, Throwable ex) {
+	public Temperature executeRecover(String lat, String lon, Throwable ex) {
 		log.error("Hystrix called executeRecover for param {}", ex.getMessage());
 		return null;
 	}

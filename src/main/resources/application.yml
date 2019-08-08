@@ -22,6 +22,8 @@ openweathermap:
     name: open-weather-map-api
     url: https://api.openweathermap.org/data/2.5
   error: Infelizmente não conseguimos realizar a consulta do clima no OpenWeather. Mesmo assim temos uma sugestao de nossos editores!
+  appid: 3d4aabd532def3666be6acb0e3086931
+  units: metric
   
 spotify:
   feign:
