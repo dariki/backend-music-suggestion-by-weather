@@ -17,7 +17,7 @@ public interface FeignOpenWeatherMapAPI {
 			@RequestParam(value = "APPID") String appid,
 			@RequestParam(value = "units") String units);
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/weathers")
+	@RequestMapping(method = RequestMethod.GET, value = "/weather")
 	OpenWeatherMapResponse getWeatherByLatLon(
 			@RequestParam(value = "lat") String lat, 
 			@RequestParam(value = "lon") String lon,
