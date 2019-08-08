@@ -1,4 +1,4 @@
-package br.com.ariki.music.suggestion.by.weather.usecase.service;
+package br.com.ariki.music.suggestion.by.weather.usecase;
 
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -13,12 +13,12 @@ import br.com.ariki.music.suggestion.by.weather.domain.entity.Temperature;
 import br.com.ariki.music.suggestion.by.weather.domain.entity.TrackInfo;
 
 @Component
-public class FindPlaylistService {
+public class FindPlaylist {
 
-	private SpotifyPlaylistService service;
+	private SpotifyPlaylist service;
 	private Environment environment;
 	
-	public FindPlaylistService(SpotifyPlaylistService service, Environment environment) {
+	public FindPlaylist(SpotifyPlaylist service, Environment environment) {
 		this.service = service;
 		this.environment = environment;
 	}

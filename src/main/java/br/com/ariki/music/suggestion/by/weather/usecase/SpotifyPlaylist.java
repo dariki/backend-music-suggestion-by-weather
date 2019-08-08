@@ -1,4 +1,4 @@
-package br.com.ariki.music.suggestion.by.weather.usecase.service;
+package br.com.ariki.music.suggestion.by.weather.usecase;
 
 import org.springframework.stereotype.Service;
 
@@ -11,13 +11,13 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class SpotifyPlaylistService {
+public class SpotifyPlaylist {
 	
 	private static final String BEARER = "Bearer "; 
 	
 	private SpotifyAPIGateway gateway;
 
-	public SpotifyPlaylistService(SpotifyAPIGateway gateway) {
+	public SpotifyPlaylist(SpotifyAPIGateway gateway) {
 		this.gateway = gateway;
 	}
 	

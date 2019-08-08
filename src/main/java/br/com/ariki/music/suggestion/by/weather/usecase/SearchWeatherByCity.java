@@ -1,4 +1,4 @@
-package br.com.ariki.music.suggestion.by.weather.usecase.service;
+package br.com.ariki.music.suggestion.by.weather.usecase;
 
 import org.springframework.stereotype.Service;
 
@@ -10,12 +10,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-public class SearchWeatherByCityService {
+public class SearchWeatherByCity {
 
 	
 	private OpenWeatherMapGateway gateway;
 
-	public SearchWeatherByCityService(OpenWeatherMapGateway gateway) {
+	public SearchWeatherByCity(OpenWeatherMapGateway gateway) {
 		this.gateway = gateway;
 	}
 	
