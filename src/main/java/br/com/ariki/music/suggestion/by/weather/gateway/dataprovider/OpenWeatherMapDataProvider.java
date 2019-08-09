@@ -12,21 +12,25 @@ import br.com.ariki.music.suggestion.by.weather.gateway.feign.openweathermap.map
 public class OpenWeatherMapDataProvider implements OpenWeatherMapGateway {
 	
 	private FeignOpenWeatherMapAPI client;
-	private String appid;
-	private String units;
+	private Environment environment;
 
 	public OpenWeatherMapDataProvider(FeignOpenWeatherMapAPI client, Environment environment) {
 		this.client = client;
-		this.appid = environment.getProperty("openweathermap.appid");
-		this.units = environment.getProperty("openweathermap.units");
+		this.environment = environment;
+		
 	}
 	
 	public Temperature getWeatherByCity(String cityName) {
+		String appid = environment.getProperty("openweathermap.appid");
+		String units = environment.getProperty("openweathermap.units");
+		
 		return OpenWeatherMapResponseToTemperature.to(client.getWeatherByCity(cityName, appid, units));
 	}
 
 	@Override
 	public Temperature getWeatherByLatLon(String lat, String lon) {
+		String appid = environment.getProperty("openweathermap.appid");
+		String units = environment.getProperty("openweathermap.units");
 		return OpenWeatherMapResponseToTemperature.to(client.getWeatherByLatLon(lat, lon, appid, units));
 	}
 

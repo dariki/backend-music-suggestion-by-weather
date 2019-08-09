@@ -7,7 +7,7 @@ import br.com.ariki.music.suggestion.by.weather.domain.entity.Temperature;
 import br.com.ariki.music.suggestion.by.weather.usecase.FindPlaylist;
 import br.com.ariki.music.suggestion.by.weather.usecase.SearchWeatherByCity;
 import br.com.ariki.music.suggestion.by.weather.usecase.SearchWeatherByLatLon;
-import br.com.ariki.music.suggestion.by.weather.usecase.SpotifyToken;
+import br.com.ariki.music.suggestion.by.weather.usecase.SpotifyGetToken;
 import br.com.ariki.music.suggestion.by.weather.usecase.orchestrator.SuggestionPlaylistOrchestrator;
 
 @Component
@@ -15,12 +15,12 @@ public class SuggestionPlaylistOrchestratorImpl implements SuggestionPlaylistOrc
 
 	private SearchWeatherByCity serviceByCity;
 	private SearchWeatherByLatLon serviceByLatLon;
-	private SpotifyToken serviceSpotifyToken;
+	private SpotifyGetToken serviceSpotifyToken;
 	private FindPlaylist findService;
 
 	public SuggestionPlaylistOrchestratorImpl(
 			SearchWeatherByCity serviceByCity, 
-			SpotifyToken serviceSpotifyToken, 
+			SpotifyGetToken serviceSpotifyToken, 
 			FindPlaylist findService, 
 			SearchWeatherByLatLon serviceByLatLon) {
 		this.serviceByCity = serviceByCity;

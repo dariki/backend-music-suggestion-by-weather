@@ -10,11 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class SpotifyToken {
+public class SpotifyGetToken {
 	
 	private SpotifyAccountGateway gateway;
 
-	public SpotifyToken(SpotifyAccountGateway gateway) {
+	public SpotifyGetToken(SpotifyAccountGateway gateway) {
 		this.gateway = gateway;
 	}
 	
